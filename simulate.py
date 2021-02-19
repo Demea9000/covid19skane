@@ -2,13 +2,8 @@
 from calculate_R import *
 import numpy as np
 import matplotlib.pyplot as plt
+
 pop = 1.362e6
-
-# R_init = R_calc[-1]
-# I_future = list(I_orig)
-# R_future = R_calc
-# w_future = list(weights)
-
 
 def get_total_infected(Incidence):
     tot = np.sum(Incidence)
@@ -67,7 +62,7 @@ def simulate(days_ahead=31, decay=True, decay_coeff=1,
         R_future.append(R_init)
         if decay:
             R_init = decay_coeff*R_new*(1 - np.tanh(tot_coeff*4))
-            decay_coeff/=100/10
+            decay_coeff/= 1.001
         else:
             R_init = R_new*(1 - np.tanh(tot_coeff*4))
 
@@ -80,15 +75,15 @@ def simulate(days_ahead=31, decay=True, decay_coeff=1,
 if __name__ == "__main__":
     I_lst = []
     R_lst = []
-    days_to_simulate = 300
+    days_to_simulate = 14
     with open("Incidence.txt", 'r') as file:
         I_or = file.readlines()
         I_or = [float(i) for i in I_or]
-    for i in range(10):
-        I, R = simulate(days_ahead=days_to_simulate, decay=False,
+    for i in range(100):
+        I, R = simulate(days_ahead=days_to_simulate, decay=True,
                     decay_coeff = 1,
-                    random_element_coeff=1,
-                    diff_distribution_from=32)
+                    random_element_coeff=.6,
+                    diff_distribution_from=200)
 
         I = np.array(I)
         I = moving_average(I, 7)

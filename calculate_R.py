@@ -37,14 +37,6 @@ def R_post(I, w, L, t, a=1, b=5, tau=7):
 
     return numerator/denominator
 
-def I_t(Rt, I, w, t):
-    I0 = 0
-
-    for s in range(1, t):
-        I0 += I[t-s]*w[s]
-
-    return Rt*I0
-
 def calculate_R(write=False):
     R_calc = []
     for days in range(tau, len(I_orig)):
@@ -65,5 +57,5 @@ def plot_R():
     plt.show()
 
 if __name__ == "__main__":
-    calculate_R(write=True)
+    calculate_R(write=False)
     #plot_R()

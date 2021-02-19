@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/orestitheodoridis/Documents/Simulate Spread R-number/venv"
+set -gx VIRTUAL_ENV "/Users/orestitheodoridis/Projects/covid19skane/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

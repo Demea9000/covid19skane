@@ -2,11 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
 R_data = pd.read_excel('Rtalet_sim.xlsx')
-
-R = R_data['Mean(R)']
-
 weights = R_data['si_distr']
 w = list(weights)
 cases = pd.read_excel('totalt-antal-konstaterade-covid-fall.xlsx')
@@ -57,5 +53,4 @@ def plot_R():
     plt.show()
 
 if __name__ == "__main__":
-    calculate_R(write=False)
-    #plot_R()
+    calculate_R(write=True)

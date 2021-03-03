@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 R_data = pd.read_excel('Rtalet_sim.xlsx')
 weights = R_data['si_distr']
 w = list(weights)

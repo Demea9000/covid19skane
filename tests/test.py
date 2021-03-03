@@ -51,3 +51,10 @@ dates = get_timeaxis(2020, 3, 2, 300)
 print(dates[-2])
 
 print(np.arange(0, 1000, 8))
+
+
+A = list(range(300))
+
+print(list(reversed(A))[::7])
+
+print(14%7==0)
